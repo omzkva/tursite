@@ -1,1 +1,1 @@
-web gunicorn tursite.wsgi 
+web gunicorn tursite.wsgi:application --log-file -
