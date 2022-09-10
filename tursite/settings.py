@@ -44,9 +44,16 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'drf_yasg',
+
+    'djoser',
+
     'rest_framework',
 
+    'rest_framework_simplejwt',
+
     'turist.apps.TuristConfig',
+    'accounts.apps.AccountsConfig',
 ]
 
 MIDDLEWARE = [
@@ -94,6 +101,13 @@ DATABASES = {
         'HOST':env("POSTGRES_HOST"),
         'PORT':'5432',
     }
+}
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
 }
 
 
