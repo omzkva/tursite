@@ -1,4 +1,3 @@
-from turtle import update
 from django.db import models
 from accounts.models import userProfile
 
