@@ -6,7 +6,7 @@ from .models import Region, Location, Route, Kind_transport, Food, Housing, Cont
 class RegionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Region
-        fields = ['id', 'name', 'pucture', 'description']
+        fields = ['id', 'name', 'picture', 'description']
 
 
 class ContactSerializer(serializers.ModelSerializer):
@@ -33,7 +33,7 @@ class Kind_transportSerializer(serializers.ModelSerializer):
 class FoodSerializer(serializers.ModelSerializer):
     class Meta:
         model = Food
-        fields = ['id', 'kitchen', 'description', 'price_day', 'location']
+        fields = ['id', 'kitchen', 'description', 'price_day', 'location', 'picture']
 
 class HousingSerializer(serializers.ModelSerializer):
     class Meta:

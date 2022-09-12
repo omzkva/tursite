@@ -15,7 +15,7 @@ class ContactAdmin(admin.ModelAdmin):
 
 
 class FoodAdmin(admin.ModelAdmin):
-    list_display = ['kitchen', 'description', 'price_day', 'check_tur', 'location']
+    list_display = ['kitchen', 'description', 'price_day', 'check_tur', 'location', 'picture']
     list_filter = ['location']
     search_fields = ['kitchen']
 
