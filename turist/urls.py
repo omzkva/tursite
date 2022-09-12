@@ -6,7 +6,7 @@
 #     path('', views.index, name='index'),
 # ]
 
-from .views import RegionViewSet, ContactViewSet, RouteViewSet, Kind_transportViewSet, HousingViewSet, FoodViewSet, LocationViewSet
+from .views import RegionViewSet, ContactViewSet, RouteViewSet, Kind_transportViewSet, HousingViewSet, FoodViewSet, LocationViewSet, ToursViewSet
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
@@ -17,4 +17,5 @@ router.register(r'kind_transport', Kind_transportViewSet, basename='kind_transpo
 router.register(r'housing', HousingViewSet, basename='housing')
 router.register(r'food', FoodViewSet, basename='food')
 router.register(r'location', LocationViewSet, basename='location')
+router.register(r'tours', ToursViewSet, basename='tours')
 urlpatterns = router.urls

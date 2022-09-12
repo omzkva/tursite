@@ -106,6 +106,25 @@ class Housing(models.Model):
     def __str__(self):
         return self.name
 
+class Tours(models.Model):
+    name = models.CharField(max_length=200)
+    price = models.CharField(max_length=300)
+    picture = models.ImageField(upload_to='image/',height_field=None,width_field=None)
+    location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    user = models.ForeignKey(userProfile, on_delete=models.CASCADE)
+    create = models.DateTimeField(auto_now_add=True)
+    update = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+
+
+
+
+
+    
+
 
 
 

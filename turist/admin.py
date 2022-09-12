@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import  Region, Location, Route, Kind_transport, Food, Housing, Contact
+from .models import  Region, Location, Route, Kind_transport, Food, Housing, Contact, Tours
 # Register your models here.
 class RegionAdmin(admin.ModelAdmin):
     list_display = ['name', 'picture', 'description']
@@ -38,6 +38,11 @@ class HousingAdmin(admin.ModelAdmin):
     list_display = ['name', 'adress', 'pic_cart', 'price', 'url', 'contact', 'check_tur', 'description']
     search_fields = ['name', 'adress']
 
+class ToursAdmin(admin.ModelAdmin):
+    list_display = ['name', 'price', 'picture', 'location']
+    list_filter = ['location']
+    search_fields = ['name']
+
 
 
 admin.site.register(Region, RegionAdmin)
@@ -47,3 +52,4 @@ admin.site.register(Route, RouteAdmin)
 admin.site.register(Kind_transport, Kind_transportAdmin)
 admin.site.register(Housing, HousingAdmin)
 admin.site.register(Contact, ContactAdmin)
+admin.site.register(Tours, ToursAdmin)

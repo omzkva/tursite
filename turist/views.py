@@ -2,8 +2,8 @@ from django.contrib.auth.models import User
 from accounts.models import userProfile
 from rest_framework import viewsets
 from .permissions import IsOwnerProfileOrReadOnly
-from .models import Region, Location, Route, Kind_transport, Food, Housing, Contact
-from .serializers import FoodSerializer, HousingSerializer, Kind_transportSerializer, LocationSerializer, RegionSerializer, ContactSerializer, RouteSerializer
+from .models import Region, Location, Route, Kind_transport, Food, Housing, Contact, Tours
+from .serializers import FoodSerializer, HousingSerializer, Kind_transportSerializer, LocationSerializer, RegionSerializer, ContactSerializer, RouteSerializer, ToursSerializer
 
 class RegionViewSet(viewsets.ReadOnlyModelViewSet):
     """
@@ -98,4 +98,17 @@ class FoodViewSet(viewsets.ModelViewSet):
         serializer.save(user=userP)
 
 
+
+class ToursViewSet(viewsets.ModelViewSet):
+    """
+    A simple ViewSet for viewing and editing accounts.
+    """
+    queryset = Tours.objects.all()
+    serializer_class = ToursSerializer
+    permission_classes = [IsOwnerProfileOrReadOnly]
+
+    def perform_create(self, serializer):
+        user = User.objects.get(username=self.request.user)
+        userP = userProfile.objects.get(user=user)
+        serializer.save(user=userP)
     

@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Region, Location, Route, Kind_transport, Food, Housing, Contact
+from .models import Region, Location, Route, Kind_transport, Food, Housing, Contact, Tours
 
 
 class RegionSerializer(serializers.ModelSerializer):
@@ -41,3 +41,7 @@ class HousingSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'adress', 'pic_cart', 'url', 'price', 'contact', 'location', 'description']
 
     
+class ToursSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tours
+        fields = ['id', 'name', 'price', 'picture', 'location']
