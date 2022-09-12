@@ -2,10 +2,10 @@ from django.contrib import admin
 from .models import  Region, Location, Route, Kind_transport, Food, Housing, Contact
 # Register your models here.
 class RegionAdmin(admin.ModelAdmin):
-    list_display = ['name']
+    list_display = ['name', 'picture', 'description']
 
 class LocationAdmin(admin.ModelAdmin):
-    list_display = ['name', 'distance_air', 'picture', 'check_tur', 'region']
+    list_display = ['name', 'distance_air', 'picture', 'check_tur', 'region', 'description']
     list_filter = ['region']
     search_fields = ['name']
 
@@ -23,7 +23,7 @@ class FoodAdmin(admin.ModelAdmin):
 
 
 class Kind_transportAdmin(admin.ModelAdmin):
-    list_display = ['name', 'quantity_place', 'price']
+    list_display = ['name', 'quantity_place', 'price', 'description']
     search_fields = ['name']
 
 
@@ -35,7 +35,7 @@ class RouteAdmin(admin.ModelAdmin):
 
 
 class HousingAdmin(admin.ModelAdmin):
-    list_display = ['name', 'adress', 'pic_cart', 'price', 'url', 'contact', 'check_tur']
+    list_display = ['name', 'adress', 'pic_cart', 'price', 'url', 'contact', 'check_tur', 'description']
     search_fields = ['name', 'adress']
 
 
